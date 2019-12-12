@@ -1,0 +1,21 @@
+[package]
+name = "bpf_examples"
+version = "0.1.0"
+edition = '2018'
+
+[dependencies]
+cty = "0.2"
+redbpf-probes = "0.9.7"
+redbpf-macros = "0.9.7"
+
+[features]
+default = []
+probes = []
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "trace_http"
+path = "src/trace_http/main.rs"
+required-features = ["probes"]
